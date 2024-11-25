@@ -4,7 +4,7 @@ function App() {
   const [quote, setQuote] = useState("");
 
   const getQuote = async () => {
-    const response = await fetch('https://your-flask-backend-url/quote');
+    const response = await fetch(''); //i couldn't deploy my app without paying
     const data = await response.json();
     setQuote(data.quote);
   };
