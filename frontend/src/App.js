@@ -14,7 +14,7 @@ function App() {
         <center>
             <h1 style={{ fontSize: '50px' }}>Quote of the Day</h1>
             <button style={{ padding: '20px', fontSize: '25px' }} onClick={getQuote}>Get Quote</button>
-            <p style={{ fontSize: '25px' }}>{quote}</p>
+            <p style={{ fontSize: '25px' }}>You miss all the shots you don't take</p>
         </center>
     </div>
   );
