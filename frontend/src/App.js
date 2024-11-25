@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [quote, setQuote] = useState("");
+
+  const getQuote = async () => {
+    const response = await fetch('https://your-flask-backend-url/quote');
+    const data = await response.json();
+    setQuote(data.quote);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <center>
+            <h1 style={{ fontSize: '50px' }}>Quote of the Day</h1>
+            <button style={{ padding: '20px', fontSize: '25px' }} onClick={getQuote}>Get Quote</button>
+            <p style={{ fontSize: '25px' }}>{quote}</p>
+        </center>
     </div>
   );
 }
